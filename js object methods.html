@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //you have to create result by using object method, first you have to create function name 'Result' which having parameter as firstname and lastname inside that function you have to create another function name 'totalMarks' which should have parameter of 6 subject marks like eng,sci etc..,inside that you have to print totalmarks of student  and then you have to create another function name 'myPer' which display the percentage student got and also u have to display wheather student pass or fail 
+
+        function Result(firstName,lastName){
+            this.firstName = firstName
+            this.lastName = lastName
+            this.totalMarks = function(eng,marathi,sanskrit,socialsci,science,maths)
+            {
+                 this.eng = eng
+                this.marathi = marathi
+                this.sanskrit = sanskrit
+                this.socialsci = socialsci
+                this.science = science
+                this.maths = maths
+                this.totalMarks = this.eng + this.marathi + this.sanskrit + this.socialsci + this.science + this.maths
+                console.log('Dear '+this.firstName+' '+this.lastName+' , Your total mark is '+this.totalMarks+' out of 600.')
+            }
+            this.myPer = function()
+            {
+                percentage = (this.totalMarks/600)*100
+                console.log('Your percentage is '+percentage.toFixed(2)+'%.')
+                if(percentage < 35)
+                {
+                    console.log('SORRY :( , You are FAILED Better luck Next time...!')    
+                }
+                else{
+                console.log('Congratulations..!!! You are PASS :)')
+                }
+                console.log(' ')
+            }
+        }
+        
+        let shreyash = new Result('Shreyash','Parab')
+        shreyash.totalMarks(72,70,70,92,54,60)
+        shreyash.myPer()
+
+        let omkar = new Result('Omkar','Bhosale')
+        omkar.totalMarks(35,35,35,35,35,35)
+        omkar.myPer()
+
+        let gotya = new Result('Gotya','Bhosale')
+        gotya.totalMarks(35,40,25,50,28,30)
+        gotya.myPer()
+        
+        
+
+        
+       
+    
+        /* 
+    # Type of function 
+     1. normal function :
+        function abc(){
+            console.log('abc')
+        }
+        abc()
+
+     2. Anonymous function :
+        let abc = function(){
+            console.log('abc')
+        }
+        abc()
+
+     3. self-invoking function:
+        (function abc(){
+            console.log('abc')
+        })()
+        
+        
+    # properties of object : those key who hold the value other than function eg- firstName
+      methods of object : those key who holds function as value eg: sayHi
+      let studenDetail = {
+            firstName : 'shreyash' ,
+            lastName : 'parab' ,
+            sayHi : function (){
+                console.log('hi')
+            }
+        }
+        studenDetail.sayHi() //hi  
+        
+
+        'this' keyword is used as an refrence to an object so that we can use innerthing 
+        let shreyash = {
+            firstName : 'shreyash' ,
+            lastName : 'parab' ,
+            displayFullName : function(){
+                console.log('hi '+this.firstName + ' '+this.lastName)
+            }
+        }
+        shreyash.displayFullName() //hi shreyash parab
+
+        object constructors -
+        function Student(firstName,lastName)
+        {
+            this.firstName = firstName
+            this.lastName = lastName
+            this.displayFullName = function(){
+                console.log(this.firstName + ' ' +this.lastName)
+            }
+        }
+
+        let shreyash = new Student('shreyash','parab')
+        shreyash.displayFullName() //shreyash parab
+
+        let omkar = new Student('omkar','bhosale')
+        omkar.displayFullName() //omkar bhosale
+        
+      ----------------------------------------------------------------------------------------------------------------------------------
+        EXERCISES:
+
+        Exercise #1:
+         create an object 'studentDetails' with firstNAme and lastName and a method which takes year as a input and return age of the student
+         let curentYear = 2022
+            let studenDetail = {
+            firstName : 'shreyash' ,
+            lastName : 'parab' ,
+            age : function(birthYear){
+                console.log(curentYear-birthYear)
+            }
+        }
+        studenDetail.age(2002) //20
+
+        Exercise #2:
+        let shreyash = {
+            firstName : 'shreyash' ,
+            lastName : 'parab' ,
+            sayHi : function(name){
+                console.log('Hi '+name)
+            }
+        }
+        shreyash.sayHi('gotya') //hi gotya
+
+
+        exercise #3
+        function Addition(fvalue,svalue){
+            this.firstValue = fvalue
+            this.secondValue = svalue
+            this.add = function(){
+                console.log(this.firstValue+this.secondValue)
+            }
+        }
+
+        let abc = new Addition(6,4)
+        abc.add() //10
+        
+        */
+    </script>
+</body>
+</html>

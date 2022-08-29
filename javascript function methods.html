@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call apply bind</title>
+</head>
+<body>
+    <script>
+       let students = [
+        {
+            name:'rama',
+            batch:9,
+            likesIcecream:false
+        },
+        {
+            name:'shreyash',
+            batch:10,
+            likesIcecream:true
+        },
+        {
+            name:'swapneel',
+            batch:11,
+            likesIcecream:false
+        },
+        {
+            name:'ayush',
+            batch:12,
+            likesIcecream:true
+        },{
+            name:'viki',
+            batch:13,
+            likesIcecream:false
+        }
+       ]
+
+       let icecreamLover = students.filter(elements => elements.likesIcecream)
+       console.log(icecreamLover)
+        //you need to pass an object as an arguement here
+        
+    
+        /*
+        Arrray -
+        properties: length
+        Methods : map ,filter , forEach etc.
+
+        functions - are type of objects
+        properties: length , name(optional) , code 
+        Methods: call , apply , bind
+
+    1. call():-
+        - Syntax: function.call(object to attach,other arguements seaprated by commas)
+        - Attach the object passed to the function and invoke
+        - It will get invoked immediately
+        - We cant link multiple object
+        - if there are x parameter in function then there should be x+1 arguements
+        - first parameter should ALWAYS object that you want to attach , any other functions parameter should be  seapreated by commas(,)
+
+      #  // without call
+        let shreyash = {
+            firstName : 'shreyash',
+            lastName : 'parab'
+        }
+
+        let omkar = {
+            firstName : 'omkar',
+            lastName : 'bhosale'
+        }
+
+        function fullName(){
+            // console.log(this) //window object
+            console.log(this.firstName + ' ' + this.lastName)
+        }
+        fullName() //ud ud
+        (There is no obj in current scope hence it display undefine)
+
+      #  // with call
+        let shreyash = {
+            firstName : 'shreyash',
+            lastName : 'parab'
+        }
+
+        let omkar = {
+            firstName : 'omkar',
+            lastName : 'bhosale'
+        }
+
+        function fullName(){
+            // console.log(this) // it will display shreyash object instead of window
+            console.log(this.firstName + ' ' + this.lastName)
+        }
+        fullName.call(shreyash) // shreyash parab
+        //you need to pass an object as an arguement here
+
+      #  We can even pass other arguemnents of function like:-
+        function fullName(country , a , b){
+            console.log(this.firstName + ' ' + this.lastName + 'from '+ country)
+            console.log(a+b)
+        }
+        fullName.call(omkar, 'india' ,6,4) //omkar bhosale from india //10
+        
+
+    2. .apply():-
+        - Syntax: function.apply(object to attach,[..other arguements in array])
+        - Attach the object passed to the function and invoke
+        - It will get invoked immediately
+        - We cant link multiple object
+        - first parameter should ALWAYS object that you want to attach , any other functions parameter should be passed in array   
+        - if there are x parameter in function then there should be 2 arguements
+
+        eg:-
+        function fullName(country , a , b){
+            console.log(this.firstName + ' ' + this.lastName + 'from '+ country)
+            console.log(a+b)
+        }
+        fullName.apply(omkar,['india',10,5]) //omkar bhosale from india //15
+        
+    3. .bind():-
+        - Syntax: function.bind([object to attach],...other arguements)
+        - Attach the object passed to the function and return an updated function with objct scope
+        - It will NOT get invoked immediately
+        - single arguement: 'object to attach'
+        - We cant link multiple object
+        
+        function fullName(country , a , b){
+            console.log(this.firstName + ' ' + this.lastName + ' from '+ country)
+            console.log(a+b)
+        }
+        let returnFullName = fullName.bind(omkar) //it will attach object to function and update it to returnFullName
+        returnFullName('india',20,30) //it will take arguements of function parameters
+        // o/p : omkar bhosale from india //50
+
+    ***Exercise:-    
+        let students = [
+        {
+            name:'rama',
+            batch:9,
+            likesIcecream:false
+        },
+        {
+            name:'shreyash',
+            batch:10,
+            likesIcecream:true
+        },
+        {
+            name:'swapneel',
+            batch:11,
+            likesIcecream:false
+        },
+        {
+            name:'ayush',
+            batch:12,
+            likesIcecream:true
+        },{
+            name:'viki',
+            batch:13,
+            likesIcecream:false
+        }
+       ]
+
+       let icecreamLover = students.filter(function(elements){
+        if(elements.likesIcecream == true)
+          return elements  
+       })
+
+       let icecreamLover = students.filter(elements => elements.likesIcecream == true)
+       console.log(icecreamLover)
+        */
+        </script>
+</body>
+</html>
+
+ <!-- 
+//     Arrowfunction demerits
+//     - this keyword inaccessible
+//     - function not get hoisted
+//  -->

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events , objects</title>
+</head>
+<body>
+    <!-- <button onclick="hello()">hello</button> -->
+    <!-- <input onfocus="hello()">hello</input> -->
+    <!-- <input onblur="hello()">hello</input> -->
+    <!-- <input onchange="hello()">hello</input> -->
+    <!-- <input ondblclick="hello()">hello</input> -->
+     <!-- <input onmouseover="hello()">hello</input> -->
+    <!-- <input onmouseout="hello()">hello</input> -->
+    <!-- <input onmousemove="hello()">hello</input> -->
+    <!-- <input onkeydown="hello()">hello</input> -->
+    <!-- <input onkeypress="hello()">hello</input> -->
+    <!-- <input onkeyup="hello()">hello</input>  -->
+    <script>
+        //function hello(){
+        //     console.log('hello')
+        // }
+
+    //  objects : is collecttion of element which used named index
+        // const details = {firstname : 'shreyash' , lastname:'parab'}
+        // console.log(details)
+
+        // const details = {
+        //     firstname : 'shreyash' ,//you can use space by giving colon 'first name' 
+        //     lastname: 'parab'
+        // }
+
+        // console.log(details['firstname']) // to print particular key
+        // console.log(details.lastname) // to print particular key
+
+        // adding new key value
+        // details.rollNo = 4
+        // console.log(details) 
+
+        // changing object key value
+        // details[rollNo] = 10
+        // console.log(details)
+
+        const marks = {
+            eng:80 ,
+            sanskrit:70 ,
+            marathi: 72 ,
+            history:96 ,
+            maths: 65 ,
+            science:45 ,
+            hobbies : 'playing cricket'
+        }
+const avgmarks = (marks['eng'] + marks['sanskrit'] + marks['marathi'] + marks['history'] + marks['maths'] + marks['science'])/600
+const avgper = avgmarks * 100
+if(avgper >= 35)
+{
+    console.log('pass')
+}
+else{
+    console.log('fail')
+}        
+    </script>
+</body>
+</html>

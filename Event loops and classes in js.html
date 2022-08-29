@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        
+
+        /*
+        Event loops:
+        - It keeps track of 1. call stack 2. Task queue
+        - if call stack is empty , and there is an event waiting to be executed inside the task queue , event loop will pick that and push it inside call stack
+
+        Call Stack:- A call stack keep track of its place in a code that calls multiple function , whenever function call it got pushes in top of call stack and start executing it when execution complete it pop it from call stack and resume where it left , it has LIFO (Last In First Out) (function which will come at last will execute first) 
+        
+        task will work as first comes first serve , it have to pick any one of micro task and macro task it will pick macro task
+
+        function LevelTwo() {
+        console.log("Inside Level Two!")
+        }
+
+        function LevelOne() {
+        LevelTwo()
+        }
+
+        function main() {
+        LevelOne()
+        }
+        main()
+
+
+        |               |           
+        |               |       first it will execute main then main calls level one then level one calls
+        | console.log() |       leveltwo which will display console msg, as console comes last it got execute 
+        | leveltwo()    |  =>   completely first after that it will get popped
+        | levelone()    |
+        | main()        |
+        -----------------
+        
+        |               |       after that level two will complete it leftover and get pooped
+        |               |
+        | leveltwo()    |  => 
+        | levelone()    |
+        | main()        |
+        -----------------
+        
+        |               |       similarly for levelone as well
+        |               | 
+        | levelone()    |  =>
+        | main()        |
+        -----------------
+
+        |               |
+        |               |  =>   similarly for main as well 
+        | main()        |
+        -----------------
+
+        |              |
+        |              |   =>   After executing snd popping everything stack will empty means it has nothing to 
+        ----------------        to execute
+        EMPTY
+        
+      --------------------------------------------------------------------------------------------------------  
+
+        Classes in js:- Template or Blueprint for object
+
+        class Student{
+            constructor(){
+
+            }
+        }
+        constructor: Default method in a class which gets invoked during creation of object
+        
+        eg:-
+        class Student{
+            constructor(firstName,lastName){
+                this.firstName = firstName
+                this.lastName = lastName
+                console.log(firstName,lastName)
+            }
+        }
+
+        let shreyash = new Student('shreyash','parab')
+
+        Methods:
+        1. Getters: get/receive some information of created objectproperties/methods
+        2. Setters: set values for properties/methods of created object
+        
+        class Student{
+            constructor(firstName,lastName){
+                this.firstName = firstName
+                this.lastName = lastName
+            }
+
+            // Getter method
+            displayfullName(){
+                console.log(this.firstName +' '+ this.lastName)
+            }
+
+            // Getter method
+            displayInfo(){
+                console.log(JSON.stringify(this))
+            }
+
+            // Setter method
+            setBatch(batchNo){
+                this.batch = batchNo
+            }
+        }
+
+        let shreyash = new Student('shreyash','parab')
+        shreyash.setBatch(10)
+        shreyash.displayInfo()
+        */
+    </script>
+</body>
+</html>

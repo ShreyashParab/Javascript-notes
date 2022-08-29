@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks 2</title>
+</head>
+<body>
+    <!-- <button onclick="executeOrder(function(){
+        console.log('The order is ready and handed over to the Zomato delivery guy!')
+        })">Execute order
+    </button> -->
+    <script>
+
+       function displayTime(){
+        const date = new Date()
+        let hrs = date.getDate().toString().padStart(2,'0')
+        let mins = date.getMinutes().toString().padStart(2,'0')
+        let secs = date.getSeconds().toString().padStart(2,'0')
+        console.log(`Current date is : ${hrs}:${mins}:${secs}`)
+        setTimeout(displayTime,1000)
+       }
+
+       
+
+    /*    
+    example : to print sum of nums
+        function mySum(num1,num2){
+        let sum = num1+num2
+        display(sum)
+       }
+
+       function display(sum){
+        console.log(sum)
+       }
+       mySum(5,5)
+
+       (***Note :- The problem with above function is that you cant prevent the function from displaying the result)
+
+       example using callbacks:-
+       function mySum(num1,num2,callback){
+        let sum = num1 + num2
+        callback(sum)
+       }
+
+       function dispSum(sum){
+        console.log(sum)
+       }
+
+       mySum(5,5,dispSum)
+
+       ---------------------------------------------------------------------------------------------------------
+
+       display an real time clock: hrs:min:sec
+       setInterval(function(){
+        const date = new Date()
+        console.log(`Current date is : ${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`)
+       },30000)// 21:51:8
+
+       (It is showing 8 instead of 08 which looks weird so we will add 0 for that padStart will add particular 'x' character at start if length is y like:- padStart(2,'0') if length is less than 2 will add 0 else it will print as it is)
+       
+       setInterval(function(){
+        const date = new Date()
+        let hrs = date.getDate().toString().padStart(2,'0')
+        let mins = date.getMinutes().toString().padStart(2,'0')
+        let secs = date.getSeconds().toString().padStart(2,'0')
+        console.log(`Current date is : ${hrs}:${mins}:${secs}`)
+       },30000)
+
+       We can achieve same thing using setTimeout like this:
+       function displayTime(){
+        const date = new Date()
+        let hrs = date.getDate().toString().padStart(2,'0')
+        let mins = date.getMinutes().toString().padStart(2,'0')
+        let secs = date.getSeconds().toString().padStart(2,'0')
+        console.log(`Current date is : ${hrs}:${mins}:${secs}`)
+        setTimeout(displayTime,1000)
+       }
+
+
+
+
+       ---------------------------------------------------------------------------------------------------------
+
+        setTimeout(function(){
+            console.log(1)
+        },5000)
+        
+        setTimeout(function(){
+            console.log(2)
+        },3000)
+
+        setTimeout(function(){
+            console.log(3)
+        },4000)
+        // 2 3 1 (in 5 sec)
+        
+        setTimeout(function(){
+            console.log(1)
+            setTimeout(function(){
+                console.log(2)
+                setTimeout(function(){
+                    console.log(3)
+                },4000)
+            },3000)
+        },5000)
+
+        //1 2 3 (in 12 sec)
+
+    ------------------------------------------------------------------------------------------------
+    order placed
+    After 2s -> chef recieved order and start preparing
+    After 10s -> pizza sauce added
+    After 5s -> Fist layer of cheese added
+    After 12s -> Toppings added
+    After 5s -> Second layer of cheese added
+    After 15s -> pizza baked!
+    After 8s -> Oregano added and packed
+    After 2s -> Package received at counter
+    The order is ready and handed over to the Zomato delivery guy!
+    
+    console.log('Order placed')
+
+    setTimeout(function(){
+        console.log('pizza sauce added')
+    },2000)
+
+    setTimeout(function(){
+        console.log('Fist layer of cheese added')
+    },10000)
+
+    setTimeout(function(){
+        console.log('Fist layer of cheese added')
+    },5000)
+
+    setTimeout(function(){
+        console.log('Toppings added')
+    },12000)
+
+    setTimeout(function(){
+        console.log('Second layer of cheese added')
+    },5000)
+
+    setTimeout(function(){
+        console.log('Pizza baked!')
+    },15000)
+
+    setTimeout(function(){
+        console.log('Oregano added and packed')
+    },8000)
+
+    setTimeout(function(){
+        console.log('Package received at counter')
+    },2000)
+    
+    console.log('The order is ready and handed over to the Zomato delivery guy!')
+    
+    (It will execute everything in 15s in unordered way now we will print it in ordered fashion)
+    
+     // Callback Hell :- When a callback calling callback repeatedly , it forms a structure like below termed as callback hell.
+        function executeOrder(callback)
+        {
+            console.log('Order placed!')
+            setTimeout(function(){
+                console.log('chef recieved order and start preparing')
+                setTimeout(function(){
+                    console.log('pizza sauce added')
+                    setTimeout(function(){
+                        console.log('Fist layer of cheese added')
+                        setTimeout(function(){
+                            console.log('Toppings added')
+                            setTimeout(function(){
+                                console.log('Second layer of cheese added')
+                                setTimeout(function(){
+                                    console.log('Pizza baked!')
+                                    setTimeout(function(){
+                                        console.log('Oregano added and packed')
+                                        setTimeout(function(){
+                                            console.log('Package received at counter')
+                                            callback()
+                                        },2000)
+                                    },8000)
+                                },15000)
+                            },5000)
+                        },12000)
+                    },5000)
+                },10000)
+            },2000)
+        }
+    
+    */
+   
+
+    </script>
+</body>
+</html>

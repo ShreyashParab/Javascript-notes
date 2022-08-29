@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+</head>
+<body>
+    <script>
+        let students = [
+        {
+            name:'rama',
+            batch:13,
+            marks:{
+                science:68,
+                social:93,
+                hindi:70,
+                maths:45,
+                english:75
+            }
+        },
+        {
+            name:'shreyash',
+            batch:10,
+            marks:{
+                science:80,
+                social:70,
+                hindi:80,
+                maths:100,
+                english:90
+            }
+        },
+        {
+            name:'swapneel',
+            batch:11,
+            marks:{
+                science:72,
+                social:70,
+                hindi:80,
+                maths:56,
+                english:90
+            }
+        },
+        {
+            name:'ayush',
+            batch:12,
+            marks:{
+                science:70,
+                social:72,
+                hindi:75,
+                maths:90,
+                english:80
+            }
+        },{
+            name:'viki',
+            batch:5,
+            marks:{
+                science:68,
+                social:93,
+                hindi:70,
+                maths:45,
+                english:75
+            }
+        }
+       ]
+
+       let avgStudents = students.map(function(student){
+        let totalMarks = student.marks.english + student.marks.hindi + student.marks.maths + student.marks.science + student.marks.social
+        let avgMarks = totalMarks/5
+         return{
+            name:student.name,
+            batch:student.batch,
+            avgMarks
+         }
+        })
+
+     avgStudents.sort((element1,element2)=>element2.avgMarks - element1.avgMarks)
+
+     let sortbyBatch = avgStudents.map(function(student){
+        avgStudents.forEach(student1 => {
+            avgStudents.forEach(student2 => {
+                if(student1.avgMarks == student2.avgMarks)
+                {
+                    if(student1.batch < student2.batch)
+                    {
+                        return{
+                            name:student1.name,
+                            batch:student1.batch,
+                            avgMarks:student1.avgMarks
+                        }
+                    }
+                }
+            });    
+        });
+     })
+       console.log(sortbyBatch)
+
+
+
+    
+        /*
+        1. forEach (iterate over the array as for loop):-
+            let arr = [1,2,3,4,5]
+            let iterateArr = arr.forEach(function(elements,index){
+            console.log(`${elements} come at index ${index}`)
+        })
+        console.log(iterateArr) //1 come at index 0
+
+        2. filter (filtered out array element which satisfied the condition and return it):-
+           let arr = [1,2,3,4,5]
+           let iterateArr = arr.filter(function(elements){
+           if(elements % 2 == 0)
+           return elements
+        })
+        console.log(iterateArr)
+
+        3. map(similar to filter but size of new array will same as prev array):-
+           let arr = [1,2,3,4,5]
+           let iterateArr = arr.map(function(elements){
+           if(elements %2 == 0)
+            return elements
+           })
+           console.log(iterateArr) //[ud,2,ud,4,ud]
+
+  ----------------------------------------------------------------------------------------------------------
+        
+        Exercise: 1 return prime array using filter method
+        let arr = [1, 3, 2, 5, 10]
+      let isPrime =  function(num)
+        {
+            if(num == 1 || num == 2){
+                    return num
+                }
+            for(let i = 2 ; i < num ; i++){
+                
+                if(num % i == 0)
+                {
+                   return false
+                }
+                  
+            }
+            return num
+        }
+           
+        let updatedArr = arr.filter(function(elements){
+                return isPrime(elements)
+        })
+        // return filterArray
+        console.log(updatedArr)
+    
+  --------------------------------------------------------------------------------------------------------      
+
+        Exercise : 2. filter an array of object who likes icecream 
+        
+        let students = [
+        {
+            name:'rama',
+            batch:9,
+            likesIcecream:false
+        },
+        {
+            name:'shreyash',
+            batch:10,
+            likesIcecream:true
+        },
+        {
+            name:'swapneel',
+            batch:11,
+            likesIcecream:false
+        },
+        {
+            name:'ayush',
+            batch:12,
+            likesIcecream:true
+        },{
+            name:'viki',
+            batch:13,
+            likesIcecream:false
+        }
+       ]
+
+       let icecreamLover = students.filter(function(elements){
+        if(elements.likesIcecream == true)
+          return elements  
+       })
+
+    -----------------------------------------------------------------------------------------------------
+
+       Exercise : 3. from below array display the resultant array having name batch and thier avgMarks respectively.
+
+       let students = [
+        {
+            name:'rama',
+            batch:9,
+            marks:{
+                science:75,
+                social:70,
+                hindi:75,
+                maths:62,
+                english:90
+            }
+        },
+        {
+            name:'shreyash',
+            batch:10,
+            marks:{
+                science:80,
+                social:70,
+                hindi:80,
+                maths:100,
+                english:90
+            }
+        },
+        {
+            name:'swapneel',
+            batch:11,
+            marks:{
+                science:72,
+                social:70,
+                hindi:80,
+                maths:56,
+                english:90
+            }
+        },
+        {
+            name:'ayush',
+            batch:12,
+            marks:{
+                science:70,
+                social:72,
+                hindi:75,
+                maths:90,
+                english:80
+            }
+        },{
+            name:'viki',
+            batch:13,
+            marks:{
+                science:68,
+                social:93,
+                hindi:70,
+                maths:45,
+                english:75
+            }
+        }
+       ]
+
+       let avgStudents = students.map(function(student){
+        let totalMarks = student.marks.english + student.marks.hindi + student.marks.maths + student.marks.science + student.marks.social
+        let avgMarks = totalMarks/5
+        return{
+            name:student.name,
+            batch:student.batch,
+            avgMarks
+        }
+
+   ---------------------------------------------------------------------------------------------------------
+   
+   Exercise : 4. from below array display the resultant array having name batch and thier avgMarks respectively only if thier average marks are greater than 75.
+
+    let students = [
+        {
+            name:'rama',
+            batch:9,
+            marks:{
+                science:75,
+                social:70,
+                hindi:75,
+                maths:62,
+                english:90
+            }
+        },
+        {
+            name:'shreyash',
+            batch:10,
+            marks:{
+                science:80,
+                social:70,
+                hindi:80,
+                maths:100,
+                english:90
+            }
+        },
+        {
+            name:'swapneel',
+            batch:11,
+            marks:{
+                science:72,
+                social:70,
+                hindi:80,
+                maths:56,
+                english:90
+            }
+        },
+        {
+            name:'ayush',
+            batch:12,
+            marks:{
+                science:70,
+                social:72,
+                hindi:75,
+                maths:90,
+                english:80
+            }
+        },{
+            name:'viki',
+            batch:13,
+            marks:{
+                science:68,
+                social:93,
+                hindi:70,
+                maths:45,
+                english:75
+            }
+        }
+       ]
+
+   let avgStudents = students.map(function(student){
+        let totalMarks = student.marks.english + student.marks.hindi + student.marks.science + student.marks.maths + student.marks.social
+        let avgMarks = totalMarks/5
+        return{
+            name:student.name,
+            batch:student.batch,
+            avgMarks
+        }
+       })
+
+        let filteredArray = avgStudents.filter(function(student){
+            return student.avgMarks > 75
+        })
+
+     console.log(filteredArray)
+
+     (here we using both map and filter coz filter only filters the array and cant add or remove extra properties for that we use map first to add avgMarks and then we filter it using filter method)
+        
+    ------------------------------------------------------------------------------------------------------
+    
+    Exercise : 5. Return an array of following details:
+     - name
+     - batch
+     - avg marks secured
+
+     sort the array based on avg marks (Toppper first, if equal , then on basis of batch number (Lowest first))
+        
+        
+    */
+</script>
+</body>
+</html>

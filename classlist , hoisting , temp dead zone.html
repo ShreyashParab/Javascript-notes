@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="p1" class="class1">hello</p> -->
+    <!-- Here we have p tag with Id pi and class name class 1 now we will try to add one more class name using js -->
+</body>
+<script>
+    /*
+    1. classList.add() :- It will add particular class
+    document.getElementById('p1').classList.add('class2')  op:- class="class1 class2"
+    
+    2. classList.remove():- It will remove particular class
+    document.getElementById('p1').classList.remove('class1') op:- class="class2"
+
+    Hoisting***:
+    - hoisting is javascript concept where all  variables and functions declarations move to the top
+    - This is applicable for all let var const
+    - let const also get hoisted ,  But you cannot access them without intialization bcoz of Temporal dead zone
+    eg: 1) console.log(x)                                       eg: 1) console.log(x)
+            var x  //ud                                                    let x //err
+        
+        2)  console.log(x)  //ud
+            var x = 5
+            console.log(x) //5
+    
+        It wont give u error bcoz of hoisting
+    
+    
+    
+    */ 
+    
+    let num = Number(prompt('Enter a Number: '))
+    if(!num || num<=0)
+    {
+        alert('Pleasd Enter a Valid Number !!!')
+    }
+    else
+    {
+    let fact = 1
+    for(let i = num ; i >= 1 ; i--)
+    {
+        fact  = fact * i
+    }
+    alert(fact)
+    let flag = true
+    for(let i = 2 ; i < num ; i++)
+    {
+        if(num%i == 0)
+        {
+           flag = false
+           break;
+        }
+    }
+    if(flag )
+    {
+        alert(num+ ' is a Prime Number')
+    }
+    else{
+        alert(num+ ' is NOT a Prime Number')
+    }
+}    
+    
+</script>
+</html>

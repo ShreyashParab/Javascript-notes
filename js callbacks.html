@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks</title>
+</head>
+<body>
+    <script>
+       
+       
+
+    
+
+        /*
+        Higher Order Functions:
+        - passes another func as an arguement (Callbacks)
+        - return/nest another function (Closures)
+
+        Callbacks:- when function defn is passed in arguement as another function
+        (USe to Handle Asynchronous code : explained in eg:2)
+        
+        eg: 1 -
+        function abc(callbacks){
+            callbacks()
+            console.log('abc')
+        }
+
+        abc(function(){
+            console.log('def')
+        })
+        //def abc
+
+        eg: 2 - asynchronous handeling
+        // without callback
+        let arr = []
+        function printArray(){
+            setTimeout(function(){
+                arr = [1,2,3,4,5]
+            },5000)
+        }
+        printArray()
+        console.log(arr) // []
+        (***Note:- if we directly call print array without call back , it will display an empty array coz setTimeout will execute the function later and remaining code immediately so that will print u empty array)
+
+        let arr = []
+        function printArray(callback){
+            setTimeout(function(){
+                arr = [1,2,3,4,5]
+                callback()
+            },5000)
+        }
+
+        printArray(function(){
+            console.log(arr)
+        })
+        // [1,2,3,4,5]
+        (***Note:- Here we call callback function right after value is assigned to an array which will display array value [1,2,3,4,5] , if it is called before or after setTimeout it will still gives you an empty array)
+        
+    ------------------------------------------------------------------------------------------------------------
+        
+        
+        */
+
+        
+        
+
+        
+    </script>
+</body>
+</html>

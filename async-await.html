@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async/Await</title>
+</head>
+<body>
+    <button onclick="executeOrder()">order</button>
+    <script>
+
+
+
+        /*
+
+            function executeOrder(){
+            console.log('Order placed!')
+            receivedOrder()
+            .then(sauceAdded)
+            .then(firstLayerChesse)
+            .then(toppingsAdded)
+            .then(secondLayerChesse)
+            .then(pizzaBaked)
+            .then(oreganoAdded)
+            .then(packageRecievedCounter)
+            .then(()=>console.log('The order is ready and handed over to the Zomato delivery guy!'))
+            .catch((err)=>console.log(err))
+        }
+
+            Async :- Attach this keyword to any function to make it asynchronous / Handle asynchronous code
+            Await :- Wait for the resolved state of promise (Resturns resolve value of promises)
+            (Await should be always inside async funcn)
+
+          -  How can you make diffrent javascript funcn asynchronous:
+            async function abc(){}
+            const abc = async function(){}
+            const abc = async () => {} 
+
+          - Equavalent representation of handeling promises using async/await
+            let promise = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                reject(console.log('promise rejected'))
+            },4000)
+            })
+
+            let promiseHandle = async ()=>{
+                try {
+                    const resolveMsg = await promise
+                    console.log(resolve) 
+                } catch (error) {
+                    console.log(reject)
+                }
+            }  
+            
+             let promise1 = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve('promise 1 resolved')
+            },8000)
+         })
+
+         let promise2 = new Promise((resolve, reject) => {
+             setTimeout(()=>{
+                resolve('promise 2 resolved')
+             },4000)
+         })
+
+         let handlePromise = async function(){
+            try {
+                const resolveMsg1 = await promise1
+                console.log(resolveMsg1)
+                const resolveMsg2 = await promise2
+                console.log(resolveMsg2) 
+            } catch (rejectMsg) {
+                console.log(rejectMsg)
+            }
+         }
+         handlePromise()
+
+        Another Example:
+        
+        let fetchDataFromServer = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve('fetched data succesfully')
+            },4000)
+         })
+
+         let processingData = new Promise((resolve, reject) => {
+             setTimeout(()=>{
+                resolve('processed data succesfully')
+             },8000)
+         })
+
+         let dataFetching = async function(){
+            try {
+                console.log('fetching data from server..')
+                const fetchedData = await fetchDataFromServer
+                console.log(fetchedData)
+                console.log('processing data from server...')
+                const processedData = await processingData
+                console.log(processedData) 
+            } catch (failedToFetchData) {
+                console.log(failedToFetchData)
+            }
+         }
+         dataFetching()
+        
+        let receivedOrder =  () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('chef recieved order and start preparing')
+                    resolve()
+                },2000)
+            })
+        }
+        let sauceAdded = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Pizza sauce added')
+                    resolve()
+                },10000)
+            })
+        }
+
+        let firstLayerChesse = async () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('First layer of cheese added')
+                    resolve()
+                },5000)
+            })
+        }
+
+        let toppingsAdded = async () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Toppings added')
+                    resolve()
+                },12000)
+            })
+        }
+
+        let secondLayerChesse =  () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Second layer of cheese added')
+                    resolve()
+                },5000)
+            })
+        }
+
+        let pizzaBaked =  () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Pizza baked')
+                    resolve()
+                },15000)
+            })
+        }
+
+        let oreganoAdded =  () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Oregano added and packed')
+                    resolve()
+                },8000)
+            })
+        }
+
+        let packageRecievedCounter =  () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Package recieved at counter')
+                    resolve()
+                },2000)
+            })
+            console.log('Order is ready to handover Zomato delivery guy')
+        }
+         
+       async function executeOrder(){
+            try {
+            console.log('order placed')
+            await receivedOrder()
+            await sauceAdded()
+            await firstLayerChesse()
+            await toppingsAdded()
+            await secondLayerChesse()
+            await pizzaBaked()
+            await oreganoAdded()
+            await packageRecievedCounter()
+            console.log('Thank You..! For ordering from us')   
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+
+         */
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+      
+
+        /*
+        Closures:- Inner function continue to have access to outer scope variables even after the outer scope has finished.
+
+        // normally
+        function abc(){
+            let x = 5
+            function def(){
+                console.log(x)
+            }
+            def()
+        }
+        abc()
+
+        // closures 
+        function abc(){
+            let x = 5
+            return ()=>{
+                console.log(x)
+            }
+        }
+        let def = abc()
+        def()
+        // you can all it like this too
+           abc()()
+
+
+        (What happening is unlike before you instead of calling anonymus funcn we are returning to function abc and store it and def and calling after abc which is out of scoped but we still able to access it)
+        
+        eg 2:- two level js 
+         function abc(){
+            let x = 5
+            let y = 10
+            return ()=>{
+                console.log(x)
+                return () =>{
+                    console.log(y)
+                }
+            }
+        }
+        let def = abc()
+        let ghi = def()
+        ghi()
+
+    -------------------------------------------------------------------------------------------------------
+
+    Currying :- 
+    - Function which takes one arguement at a time and returns a new function expecting the next arguement
+    - it is a transformation of function that translates a function from callable as func(a,b,c) into callable as function function(a)(b)(c)
+        
+    // normal function to add three number
+       const add = (num1,num2,num3) =>{
+        return num1 + num2 + num3
+       }
+       console.log(add(5,10,15)) //30
+
+    //  currying function   
+        const addThreeNums = (num1) =>{
+          return (num2) =>{
+            return (num3) =>{
+                return num1 + num2 + num3
+            }
+          }
+        }
+       console.log(addThreeNums(5)(10)(15)) //30
+
+    */
+    </script>
+</body>
+</html>

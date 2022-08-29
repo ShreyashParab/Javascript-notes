@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+<body>
+    <script>
+     
+        
+        /*
+       *** promises:- promises are something which promises results.it is either resolved or reject.
+        // producing code: code that take some time
+        // consuming codde: code that must wait for results
+
+        (Lets take an real time example like login , after entering detail it will try to search wheather emailid and password are matched or not (which is PRODUCING CODE) coz it will take li'l time to find and match data , After matching that it will give you access to an account before that circular loading thing appear which is none other than CONSUMING CODE and only after succesful login it will show your account( which is RESOLVE) or else it will print login failed or something like that (which is REJECT))
+
+        let basicPromise = new Promise(function(resolve,reject){
+            // eiter it wil resolve or reject 
+            resolve()
+            
+            reject()
+        })
+
+        basicPromise.then(function(value){
+            console.log('work done succesfully',value)
+        },function(err){
+            console.log('some error occured',err)
+        })
+
+        (It will display work done successfull when it resolve and it will display an error ocuured when we it reject)
+
+            |   states of promises   |   Result of promises    |  
+            -----------------------------------------------------      
+            |     pending            |        undefined        |
+            |     fulfilled          |        a result value   |
+            |     rejected           |        an error object  |
+            |                        |                         |
+        
+           function display(data){
+            console.log(data)
+        }
+
+        let promiseTemp = new Promise((myResolve,myReject)=>{
+            let x = 0;
+            if(x==0){
+                // myResolve('nice')
+                setTimeout(()=>myResolve('good'),4000)
+            }
+            else{
+                myReject('oops!')
+            }
+        })
+
+        // console.log(promiseTemp)
+        promiseTemp.then(function(value){
+            display(value)
+        },function(error){
+            display(error)
+        })
+        //nice(in 4 secs)
+
+        another way 
+        promiseTemp.then((value)=>{
+            display(value)
+        }).catch((value)=>{
+            display(error)
+        })
+
+       *** promise chaining:-
+       - When you return value from .then() method -returned value become a promise which needs to be handeled by .then() chaining
+       - It can also be possible that data that returns from first .then() and that data can be caught by second .then() which is chained to first one.
+       - calling promise again and again to return a promise using .then
+        let promiseX = new Promise((resolve,reject)=>{
+            setTimeout(()=>resolve(10),4000)
+        })
+
+        promiseX.then((value)=>{
+            console.log(value)
+            return value
+        }).then((value)=>{
+            console.log(value*2)
+            return value
+        }).then((value)=>{
+            console.log(value*3)
+        })
+        //10 20 30(after 4 secs)
+
+        **promise chaining(best example):-
+          let promiseX = new Promise((resolve, reject) => {
+            setTimeout(()=>resolve(10),3000)
+        })
+
+        promiseX.then((value)=>{
+            console.log(value)
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>resolve(value*2),5000)
+            })
+        }).then((value)=>{
+            console.log(value)
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>resolve(value*3),4000)
+            })
+        }).then((value)=>{
+            console.log(value)
+        })
+        //10 (in 3 sec)
+        //20 (in 5 sec)
+        //60 (in 4 sec)
+        (total time 12sec)
+
+        *** 2nd way of promise chaining :-
+
+         let getUser = (userId,userName)=>{
+            console.log('fetch user data')
+            return new Promise((resolve, reject) => {
+            
+                setTimeout(()=>resolve({
+                    id:userId ,
+                    name:userName
+                }),2000)
+                
+            })
+        }
+
+        let getServices = (user)=>{
+            console.log(`services provide to ${user.name} are :`)
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>resolve(['email','vpn','security']),3000)
+            })
+        }
+
+        let serviceCost = (services)=>{
+            console.log(`calculate cost of services of ${services.join(',')}`)
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>resolve(services.length * 1000),5000)
+            })
+        }
+
+        getUser(10,'shreyash').then((user)=>{
+            console.log(user)
+            getServices(user).then((services)=>{
+                console.log(services)
+                serviceCost(services).then((cost)=>{
+                    console.log(cost)
+                })
+            })
+        })
+
+       
+        
+            */
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises 2</title>
+</head>
+<body>
+    <button onclick="executeOrder()">Execute Order</button>
+    <script>
+        let receivedOrder = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('chef recieved order and start preparing')
+                    resolve()
+                },2000)
+            })
+        }
+        let sauceAdded = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Pizza sauce added')
+                    resolve()
+                },10000)
+            })
+        }
+
+        let firstLayerChesse = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('First layer of cheese added')
+                    resolve()
+                },5000)
+            })
+        }
+
+        let toppingsAdded = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Toppings added')
+                    resolve()
+                },12000)
+            })
+        }
+
+        let secondLayerChesse = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Second layer of cheese added')
+                    resolve()
+                },5000)
+            })
+        }
+
+        let pizzaBaked = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Pizza baked')
+                    resolve()
+                },15000)
+            })
+        }
+
+        let oreganoAdded = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Oregano added and packed')
+                    resolve()
+                },8000)
+            })
+        }
+
+        let packageRecievedCounter = () =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    console.log('Package recieved at counter')
+                    resolve()
+                },2000)
+            })
+            console.log('Order is ready to handover Zomato delivery guy')
+        }
+
+        function executeOrder(){
+            console.log('Order placed!')
+            receivedOrder()
+            .then(sauceAdded)
+            .then(firstLayerChesse)
+            .then(toppingsAdded)
+            .then(secondLayerChesse)
+            .then(pizzaBaked)
+            .then(oreganoAdded)
+            .then(packageRecievedCounter)
+            .then(()=>console.log('The order is ready and handed over to the Zomato delivery guy!'))
+            .catch((err)=>console.log(err))
+        }
+        /*
+        order placed
+          After 2s -> chef recieved order and start preparing
+          After 10s -> pizza sauce added
+          After 5s -> Fist layer of cheese added
+          After 12s -> Toppings added
+          After 5s -> Second layer of cheese added
+          After 15s -> pizza baked!
+          After 8s -> Oregano added and packed
+          After 2s -> Package received at counter
+          The order is ready and handed over to the Zomato delivery guy!
+self-made example to clear promise:-
+make student result using promises chaining
+
+ let studentInfo = (studentRollno,studentName)=>{
+    console.log('fetching student data...')
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>resolve({
+            name:studentName,
+            rollno:studentRollno
+        }),2000)
+    })
+}
+
+let studentTotalMarks= (data,eng,hindi,science,maths,social)=>{
+    console.log(`fetching ${data.name}'s total marks...`)
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>resolve(
+            eng + hindi + science + maths + social
+        ),3000)
+    })
+}
+
+let studentPercentage = (totalMarks,data)=>{
+    console.log(`fetching ${data.name} result...`)
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>resolve((totalMarks/500)*100),5000)
+    })
+}
+
+let finalResult = (percentage,data)=>{
+    return new Promise((resolve, reject) => {
+        if(percentage > 35){
+        setTimeout(()=>resolve(
+            `Congratulations ${data.name}..! You are passed`
+        ),4000)
+        }else{
+            console.log('You are failed')
+        }
+    })
+}
+
+ studentInfo(5,'shreyash').then((data)=>{
+    console.log(data)
+    studentTotalMarks(data,35,35,30,35,35).then((totalMarks)=>{
+        console.log(totalMarks+' out of 500')
+        studentPercentage(totalMarks,data).then((percentage)=>{
+            console.log(percentage.toFixed(2)+'%')
+            finalResult(percentage,data).then((result)=>{
+                console.log(result)
+            })
+        })
+    })
+})
+        
+---------------------------------------------------------------------------------------------------------
+
+
+    Last time we did pizza thing with callbacks now we will do it using promises
+
+    fu
+*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading"></div>
+    <script>
+    //     let a = 5
+    //     console.log(a)  //5
+
+    //     let b = new Number(5) //Number-prototype:number primitivevalue:5
+    //     console.log(b);
+    //     console.log(b.valueOf()) // 5
+        
+
+    //     let c = new String('hello')
+    //     console.log(c)
+
+    //     let d = new Boolean(true)
+    //     console.log(d)
+
+   
+//    a = 10
+    // const obj1 = {
+    //     a:5,
+    //     b:3
+    // }
+
+    // obj1.a = 15
+    // console.log(obj1)
+    // document.getElementById('heading').innerText = obj1 // [object Object]
+
+    // [object Object] this is an type of error when we try to access object using DOM manipulation
+    // bcoz javascript unable to access obj1
+    //so to solve this we use JSON.stringify(obj1)
+
+    // document.getElementById('heading').innerText = JSON.stringify(obj1) //{"a":4,"b":3}
+    //JSON is javascript object notation in which use for data interchange
+    
+    // JSON.stringify() : it is use to convert object to string
+    // JSON.parse() : it is use to convert string to object , string which is similar to object 
+
+    // eg:
+    // console.log(JSON.parse('{"a":4,"b":3}')) //convert it into object
+    // let curentYear = 2022
+    // let studenDetail = {
+    //     firstName : 'shreyash',
+    //     lastName: 'parab' ,
+    //     age : function(birthYear){
+    //         console.log(curentYear - birthYear)
+    //     }
+    // }
+    // studenDetail.age(2002)
+
+    // let studenDetail = {
+    //     firstName : 'shreyash',
+    //     lastName: 'parab' ,
+    //     hobbies:['playing','reading'],
+    //     displayMsg: function(){
+    //         console.log('my name is ' +this.firstName + ' ' +this.lastName+' my hobbies are '+this.hobbies.join(','))
+    //     }
+    // }
+    // studenDetail.displayMsg()
+
+    /*
+        ***imp note:- when a key in object gets repeated it will overwrite old value and assign new value in it.
+        eg:-
+        let obj = {a: 5, b: 10, c: 15, a:20}
+        console.log(obj) //{a: 20, b: 10, c: 15}
+        // key 'a' gets reapeated its inital value was 5 but after that it become 20 coz 5 got overwrite by 20. 
+    */
+    </script>
+</body>
+</html>

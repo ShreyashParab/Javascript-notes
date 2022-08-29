@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .hi{
+            background-color: red;
+        }
+        #hello{
+            background-color: aqua;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <img src="#" alt="abc.jpg"> -->
+    <!-- <input type="number" name="bill" id="bill" placeholder="Enter Your Bill Amount">
+    <input type="button" value="submit" onclick="discountCalculator()"> -->
+</body>
+<script>
+    // change attribute of HTML tags
+    // document.getElementById('hi').alt = 'xyx.jpg'
+
+    // change style of html tags
+    // document.getElementById('hi').style.cssText = 'background-color:blue; color:red;' 
+
+    //var x = confirm('hi')
+    
+    //If we select cancel in the prompt it returns 'null' value 
+    // var x = prompt('ENTER YOUR AGE:')
+    // console.log(x) 
+        
+    //var x = alert('hi')
+    // console.log(typeof(x))
+
+    // undefine
+    //  var x
+    //  console.log(x) 
+
+    // NaN (Not a number):- Bcoz it cant convert string to number
+    //  var x = Number('abc') 
+    //  console.log(x) 
+
+    // problem
+    //    var x = Number(prompt('Enter Your Age: '))
+    //    if(x >= 18)
+    //    {
+    //     console.log('eligible for vote')
+    //    }
+    //    else{
+    //     console.log('Not eligible for vote')
+    //    }
+
+    // ternary operator :- Syntax : Condition ? true statement : false statement   
+    // var x = 25
+    // x>18 ? console.log('eligible') : console.log('not eligible')
+
+    // var keyword
+    //  x = 'hi'
+    // var x
+    // console.log(x)
+
+    // preincrement and postincrement || predecrement and  postdecrement 
+    //    var  x=1
+    //    console.log(x++)
+
+    //    var  x=
+    //    console.log(++x)
+
+    // 1.    if(false)
+    //     {
+    //         console.log('its true')
+    //     }
+    //     else{
+    //         console.log('its false')
+    //     }
+
+    // 2.    if(true)
+    //     {
+    //         console.log('its true')
+    //     }
+    //     else{
+    //         console.log('its false')f
+    //     }
+
+
+        // if else example 
+
+            // let billAmount = Number(prompt('Enter Bill Amount:'))
+            // if(!billAmount || billAmount <= 0){
+            //     alert('Please Enter a Valid Amount !!!')
+            //  }
+            //  else{
+            //     if(billAmount >= 3500)
+            //     {
+            //         discount = billAmount * 0.1
+            //         discountAmount = billAmount - discount
+            //         alert('Your bill amount is: ' +discountAmount)
+            //     }
+            //     else{
+            //         if(billAmount >= 2500)
+            //         {
+            //             discount = billAmount * 0.05
+            //             discountAmount = billAmount - discount
+            //             alert('Your bill amount is: ' +discountAmount)
+            //         }
+            //         else{
+            //             alert(billAmount)
+            //         }
+            //      }
+            // }
+             
+        // Addition of string and number will always be string for other operator string will convert into number:-
+        
+        // console.log('5'+5)          console.log(5+'5')          console.log('5'+'5')
+            // 55                               55                          55 
+
+        // for others operaator string got covert into number:-
+                
+        // console.log('5'-5)  console.log('5'*5)
+            // 0                     25
+
+        // if we do arithmatic operation with string it will show NaN:-
+
+        // console.log('abc' + 5)
+        
+        
+        // a = 5
+        // console.log(~a)
+         
+        
+        // RIGHT SHIFT                                              LEFT SHIFT
+        // 10:     1010                                             10:      1010
+        // 10 >>2: 0101 => 0010(2)                                  10 <<2:  0000 1010 => 0001 0100 =>0010 1000(40)
+        // var a = 10                                               var a = 10                   
+        // console.log(a >> 2)                                      console.log(a<<2)
+        // op:- 2                                                   op:- 40        
+
+       
+       
+        // Exercise of bill part2:-
+
+        // <input type="number" name="bill" id="bill" placeholder="Enter Your Bill Amount">
+        // <input type="button" value="submit" onclick="discountCalculator()">
+         
+        // function discountCalculator()
+        // {
+        //     let billAmount = document.getElementById('bill').value
+        //     if(!billAmount || billAmount <= 0)
+        //     {
+        //         alert('Please Enter A Valid Amount !!!') 
+        //     }
+        //     else{
+        //         if(billAmount > 3500)
+        //         {
+        //         let Age = Number(prompt('Enter Your Age: '))
+        //         if(Age >= 18)
+        //         {
+        //             let discount = billAmount * 0.12
+        //             let discountAmount = billAmount - discount
+        //             alert('Your Bill Amount is: '+discountAmount)
+        //         }
+        //         else{
+        //             let discount = billAmount * 0.1
+        //             let discountAmount = billAmount - discount
+        //             alert('Your Bill Amount is: '+discountAmount)
+        //         }
+        //     }
+        //     else{
+        //             if(billAmount > 2500){
+        //                 let discount = billAmount * 0.05
+        //                 let discountAmount = billAmount - discount
+        //                 alert('Your Bill Amount is: '+discountAmount)
+        //             }
+        //             else{
+        //                 alert('Your Bill Amount is: '+billAmount)
+        //             }
+        //         }
+        //     }
+        // }
+
+        // console.log(typeof(null)) //object
+        // console.log(typeof(NaN)) //number
+        // console.log(typeof(undefined)) //ud
+        
+        
+</script>
+</html>
+ 
+<!-- 
+    // Data type in js
+    // 1. Number
+    // 2. string
+    // 3. Boolean
+    // 4. Null
+    // 5. undefined
+    // 6. Object
+
+    //  Truthy and falsy     ***Important
+    //     Truthy: true , non-zero numbers , string , empty string with space, infinity , empty array and string
+    //     Falsey: false , zero , empty string , null , undefined , Nan
+    //    note :- where non initilized variable gives you error
+ -->
+ 

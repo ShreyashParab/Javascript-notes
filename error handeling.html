@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    /*
+      type of error:
+      1.comppile time: error during compiling the code , eg syntax error  
+      2. runtime: error during runtime of code eg. divide by 0 , hard to detect
+
+     why we use error handeling?
+     - runtime errors are hard to detect coz they dont throw u direct error hence error handeling is neccesary to deal with errors easily and effectively
+     - to handle any error efficiently and effectively
+    
+     Syntax:-
+     try{
+        //suspicious code
+     }
+     catch(error){
+        handle the error
+     }
+
+     eg:-
+     // without try catch
+        console.log(1) //1
+        console.log(2) //2
+        console.log(eval('5 + something')) //err (rest below will not be displayed bcoz of err)
+        console.log(3)
+        console.log(4)
+        console.log(5)
+        
+    // with try catch(it executes every line of code without ease.)
+    console.log(1) //1
+    console.log(2) //2
+    try{
+        console.log(eval('5 + something'))
+    }
+    catch(error){
+        console.log('this was caught by catch block '+ error) //this was...ReferenceError: something is not defined
+    }
+    console.log(3) // 3
+    console.log(4) //4
+    
+
+    finally:- it executes statement inside it whether there is error or not.
+    finally{
+        something...
+    }
+
+    throw:- we can manually throw error for particular case and we can create err
+
+    eg:- if we want to create prog for fact of input number for that no. should be 0 or greater than that
+    try{
+        let input = -8
+        if(input < 0)
+        throw new Error('only 0 or positive no. are allowed') //throwing user created err 
+    }
+    catch(error){
+        console.log(error) //display above err
+    }
+        */
+    </script>
+</body>
+</html>

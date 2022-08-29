@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises 3</title>
+</head>
+<body>
+    <script>
+        
+
+        /*
+            - Will only to resolve if 'ALL' promises gets resolved
+            - Overall resolved value will be an array of resolved value of all promises
+            - Rejected value will be first rejected promise value
+            - for eg if two promises get rejected only first rejected will be shown other will not get executed at all
+            - Overall promise resolve time = resolve time of promise which takes the largest time
+
+             let promise1 = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve('promise 1 resolve')
+            },1000)
+        })
+
+        let promise2 = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                // resolve('promise 2 resolve')
+                reject('promise 2 rejected')
+            },3000)
+        })
+
+        let promise3 = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                // resolve('promise 3 resolve')
+                reject('promise 3 rejected')
+            },5000)
+        })
+
+        // promise1.then((value)=>console.log(value)).catch((err)=>console.log(err))
+
+        Promise.all([promise1,promise2,promise3])
+        .then((msg)=>console.log(msg))
+        .catch((err)=>console.log(err))
+        
+        Promise.any :- 
+        - Will  resolve even if 'SINGLE' promises gets resolved
+        - Overall resolved value will be an array of resolved value of first promises
+        - Rejected promise will be skipped , if all promise got rejected  - promise.any will be rejected(catch block will run)
+        - for eg if two promises get rejected only first rejected will be shown other will not get executed at  all
+        - Overall promise resolve time = resolve time of promise which takes the shortest time
+        
+         let promise1 = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                // resolve('promise 1 resolve')
+                reject('promise 2 resolve')
+            },1000)
+        })
+
+        let promise2 = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                // resolve('promise 2 resolve')
+                reject('promise 2 rejected')
+            },3000)
+        })
+
+        let promise3 = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                // resolve('promise 3 resolve')
+                reject('promise 3 rejected')
+            },5000)
+        })
+
+        // promise1.then((value)=>console.log(value)).catch((err)=>console.log(err))
+
+        Promise.any([promise1,promise2,promise3])
+        .then((msg)=>console.log(msg))
+        .catch((err)=>console.log(err))
+        
+        */
+    </script>
+</body>
+</html>
